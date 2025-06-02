@@ -4,6 +4,16 @@
 
 
 
-    <button class="btn">Открыть пользователей</button>
+    <button class="btn" @click="count++">Открыть пользователей {{count}}</button>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      count: 0,
+    }
+  }
+}
+</script>
