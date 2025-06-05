@@ -4,16 +4,24 @@
 
 
 
-    <button class="btn" @click="count++">Открыть пользователей {{count}}</button>
+    <button class="btn" @click="navigate">Открыть пользователей</button>
   </div>
 </template>
 
-<script>
-export default {
-  data() {
+<script lang="ts">
+import {defineComponent} from "vue";
+import {useRouter} from 'vue-router'
+export default defineComponent({
+  setup() {
+    const router = useRouter()
+
+    const navigate = (): void => {
+      router.push('/users')
+    }
     return {
-      count: 0,
+      title: 'Как Vue работает с TypeScript?',
+      navigate
     }
   }
-}
+})
 </script>
